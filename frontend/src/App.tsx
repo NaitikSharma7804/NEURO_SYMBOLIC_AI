@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchHealth } from './services/api';
-import { HealthStatus } from './types';
+import { HealthStatus, ProofGraph } from './types';
 import { Playground } from './components/Playground';
 import { ProofDAGViewer } from './components/ProofDAGViewer';
 import { ExperimentDashboard } from './components/ExperimentDashboard';
@@ -19,6 +19,7 @@ import {
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'playground' | 'proof_dag' | 'experiments' | 'datasets' | 'architecture'>('playground');
+  const [activeProof, setActiveProof] = useState<ProofGraph | null>(null);
   const [health, setHealth] = useState<HealthStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -109,8 +110,13 @@ export const App: React.FC = () => {
           </div>
         )}
 
-        {activeTab === 'playground' && <Playground />}
-        {activeTab === 'proof_dag' && <ProofDAGViewer />}
+        {activeTab === 'playground' && (
+          <Playground
+            onProofGenerated={(proof) => setActiveProof(proof)}
+            onNavigateToProofDAG={() => setActiveTab('proof_dag')}
+          />
+        )}
+        {activeTab === 'proof_dag' && <ProofDAGViewer proof={activeProof} />}
         {activeTab === 'experiments' && <ExperimentDashboard />}
         {activeTab === 'datasets' && <DatasetExplorer />}
         {activeTab === 'architecture' && <ArchitectureView />}

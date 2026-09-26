@@ -1,6 +1,6 @@
 {
-  "experiment_id": "exp_1790446833_4f8854",
-  "timestamp": "2026-09-26T18:20:33.912124+00:00",
+  "experiment_id": "exp_1790442391_07643e",
+  "timestamp": "2026-09-26T17:06:31.245695+00:00",
   "dataset": "custom",
   "dataset_version": "1.0",
   "model": "mock-model",
@@ -12,19 +12,19 @@
     "reasoning_backend": "pure",
     "provider": "mock"
   },
-  "baseline": "proposed",
+  "baseline": "ablation_e",
   "metrics": {
     "answer_accuracy": 1.0,
-    "formalization_accuracy": 0.8333,
+    "formalization_accuracy": 1.0,
     "logical_validity": 1.0,
     "contradiction_precision": 1.0,
     "contradiction_recall": 1.0,
     "contradiction_f1": 1.0,
     "unknown_accuracy": 1.0,
-    "proof_accuracy": 0.6667,
+    "proof_accuracy": 1.0,
     "unsupported_conclusion_rate": 0.0,
-    "explanation_faithfulness": 0.8333,
-    "average_latency_ms": 0.12,
+    "explanation_faithfulness": 0.0,
+    "average_latency_ms": 2.53,
     "average_tokens_used": 180.0
   }
 }

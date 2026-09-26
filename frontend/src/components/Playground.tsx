@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { executeReason } from '../services/api';
-import { ReasoningResponse, ExplanationMode } from '../types';
+import { ReasoningResponse, ExplanationMode, ProofGraph } from '../types';
 import {
   Play,
   CheckCircle2,
@@ -37,7 +37,12 @@ const PRESETS = [
   },
 ];
 
-export const Playground: React.FC = () => {
+interface PlaygroundProps {
+  onProofGenerated?: (proof: ProofGraph) => void;
+  onNavigateToProofDAG?: () => void;
+}
+
+export const Playground: React.FC<PlaygroundProps> = ({ onProofGenerated, onNavigateToProofDAG }) => {
   const [queryText, setQueryText] = useState(PRESETS[0].text);
   const [mode, setMode] = useState<ExplanationMode>('DETAILED');
   const [loading, setLoading] = useState(false);
@@ -50,6 +55,9 @@ export const Playground: React.FC = () => {
     try {
       const res = await executeReason(queryText, mode);
       setResponse(res);
+      if (res.proof && res.proof.steps.length > 0) {
+        onProofGenerated?.(res.proof);
+      }
     } catch (err: any) {
       setError(err.message || 'Reasoning pipeline execution failed.');
     } finally {
@@ -289,6 +297,14 @@ export const Playground: React.FC = () => {
                   >
                     {response.proof_validation?.valid ? 'INDEPENDENT PROOF VALIDATED' : 'PROOF INVALID'}
                   </span>
+                  {onNavigateToProofDAG && (
+                    <button
+                      onClick={onNavigateToProofDAG}
+                      className="text-xs bg-indigo-600/80 hover:bg-indigo-500 text-white font-mono px-2.5 py-1 rounded transition-colors"
+                    >
+                      Inspect in Proof DAG Tab →
+                    </button>
+                  )}
                 </div>
               </div>
 
