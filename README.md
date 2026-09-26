@@ -122,27 +122,27 @@ pytest
 ## 6. Development Roadmap
 
 - [x] **Phase 0**: Project Initialization, Skeletons, Health Route, CI/Test Setup
-- [ ] **Phase 1**: Deterministic Symbolic Engine (Pure Python Forward Chaining & Proof DAG)
-- [ ] **Phase 2**: SWI-Prolog Integration & Controlled Logic Compiler
-- [ ] **Phase 3**: Strict Structured Logic Schema
-- [ ] **Phase 4**: LLM Formalization Layer
-- [ ] **Phase 5**: Representation Validator & Recovery Loops
-- [ ] **Phase 6**: Complete Integrated Neuro-Symbolic Service
-- [ ] **Phase 7**: Contradiction Analysis Engine
-- [ ] **Phase 8**: Proof Generator & Graph Visualizer
-- [ ] **Phase 9**: Independent Proof Step Validator
-- [ ] **Phase 10**: Proof-Grounded Explainable AI (XAI)
-- [ ] **Phase 11**: End-to-End Robust Error Handling
-- [ ] **Phase 12**: Dataset Ingestion (RuleTaker, ProofWriter, FOLIO, Custom)
-- [ ] **Phase 13**: Baseline Implementations (A, B, C, D)
-- [ ] **Phase 14**: Comprehensive Evaluation & Metrics
-- [ ] **Phase 15**: Ablation Suite (A - F)
-- [ ] **Phase 16**: Public API Finalization
-- [ ] **Phase 17**: Research Dashboard & Frontend Playground
-- [ ] **Phase 18**: Visual Analytics & Proof Exploration UI
-- [ ] **Phase 19**: Containerization & CI/CD Pipelines
-- [ ] **Phase 20**: Empirical Research Documentation
-- [ ] **Phase 21**: Camera-Ready Scientific Paper
+- [x] **Phase 1**: Deterministic Symbolic Engine (Pure Python Forward Chaining & Proof DAG)
+- [x] **Phase 2**: SWI-Prolog Integration & Controlled Logic Compiler
+- [x] **Phase 3**: Strict Structured Logic Schema
+- [x] **Phase 4**: LLM Formalization Layer
+- [x] **Phase 5**: Representation Validator & Recovery Loops
+- [x] **Phase 6**: Complete Integrated Neuro-Symbolic Service
+- [x] **Phase 7**: Contradiction Analysis Engine
+- [x] **Phase 8**: Proof Generator & Graph Visualizer
+- [x] **Phase 9**: Independent Proof Step Validator
+- [x] **Phase 10**: Proof-Grounded Explainable AI (XAI)
+- [x] **Phase 11**: End-to-End Robust Error Handling
+- [x] **Phase 12**: Dataset Ingestion (RuleTaker, ProofWriter, FOLIO, Custom)
+- [x] **Phase 13**: Baseline Implementations (A, B, C, D)
+- [x] **Phase 14**: Comprehensive Evaluation & Metrics
+- [x] **Phase 15**: Ablation Suite (A - F)
+- [x] **Phase 16**: Public API Finalization
+- [x] **Phase 17**: Research Dashboard & Frontend Playground
+- [x] **Phase 18**: Visual Analytics & Proof Exploration UI
+- [x] **Phase 19**: Containerization & CI/CD Pipelines
+- [x] **Phase 20**: Empirical Research Documentation
+- [x] **Phase 21**: Camera-Ready Scientific Paper Draft
 
 ---
 
