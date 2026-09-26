@@ -53,3 +53,23 @@ Domain Services (Formalization, Validation, Symbolic Engine, Proof, XAI)
        ↓
 Infrastructure Layer (LLM Providers, SWI-Prolog Engine, SQLite/PostgreSQL)
 ```
+
+### Deterministic Symbolic Engine (Phase 1)
+
+The Phase 1 deterministic engine implements forward chaining over definite clauses extended with explicit classical negation under an Open-World Assumption (OWA):
+
+- **Knowledge Base**: Facts and rules are indexed by normalized predicate identifiers and polarity (`is_negated`). Deduplication is enforced at fact insertion time.
+- **Forward Chaining**: Bounded iteration fixed-point computation matching conjunctions of pattern atoms with variable unification and depth tracking.
+- **Cycle Termination**: Deduplication of derived ground atoms and iteration/depth caps guarantee termination on recursive or circular rules ($p(X) \to q(X) \land q(X) \to p(X)$).
+
+### Contradiction Policy
+
+For any target query $Q(\mathbf{c})$, the system evaluates both $Q(\mathbf{c})$ and its explicit negation $\neg Q(\mathbf{c})$:
+
+| $Q(\mathbf{c})$ Provable | $\neg Q(\mathbf{c})$ Provable | Status | Conflict Detected | Semantics |
+| :---: | :---: | :---: | :---: | :--- |
+| **True** | **False** | `ENTAILED` | `False` | $Q$ holds monotonically from the knowledge base. |
+| **False** | **True** | `CONTRADICTED` | `False` | Explicit refutation $\neg Q$ is established. |
+| **True** | **True** | `CONTRADICTED` | `True` | Inconsistent knowledge base: both $Q$ and $\neg Q$ derivable. Both proof traces are preserved. |
+| **False** | **False** | `UNKNOWN` | `False` | Open-world assumption: neither $Q$ nor $\neg Q$ is established. |
+

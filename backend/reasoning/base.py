@@ -5,11 +5,11 @@ from backend.models.proof import ProofGraph
 
 
 class ReasoningBackend(ABC):
-    """Abstract base class for symbolic reasoning backends (Pure Python, SWI-Prolog, Z3, etc.)."""
+    """Abstract base class for symbolic reasoning backends."""
 
     @abstractmethod
-    def reason(self, schema: LogicSchema) -> Tuple[ReasoningResultEnum, ProofGraph]:
-        """Perform symbolic inference and return (Result, ProofGraph)."""
+    def reason(self, schema: LogicSchema) -> Tuple[ReasoningResultEnum, ProofGraph, Dict[str, Any]]:
+        """Perform symbolic inference and return (Result, ProofGraph, Metadata)."""
         pass
 
     @abstractmethod
