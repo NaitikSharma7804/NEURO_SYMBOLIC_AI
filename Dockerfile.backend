@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+# Install system dependencies including SWI-Prolog
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    swi-prolog \
+    gcc \
+    g++ \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt pyproject.toml ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY backend ./backend
+COPY prolog ./prolog
+COPY datasets ./datasets
+COPY experiments ./experiments
+COPY tests ./tests
+
+EXPOSE 8000
+
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
