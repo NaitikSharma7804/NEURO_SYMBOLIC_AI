@@ -38,16 +38,23 @@ const PRESETS = [
 ];
 
 interface PlaygroundProps {
+  initialQuery?: string;
   onProofGenerated?: (proof: ProofGraph) => void;
   onNavigateToProofDAG?: () => void;
 }
 
-export const Playground: React.FC<PlaygroundProps> = ({ onProofGenerated, onNavigateToProofDAG }) => {
-  const [queryText, setQueryText] = useState(PRESETS[0].text);
+export const Playground: React.FC<PlaygroundProps> = ({ initialQuery, onProofGenerated, onNavigateToProofDAG }) => {
+  const [queryText, setQueryText] = useState(initialQuery || PRESETS[0].text);
   const [mode, setMode] = useState<ExplanationMode>('DETAILED');
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState<ReasoningResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (initialQuery) {
+      setQueryText(initialQuery);
+    }
+  }, [initialQuery]);
 
   const handleRun = async () => {
     setLoading(true);

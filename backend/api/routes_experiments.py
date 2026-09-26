@@ -4,11 +4,14 @@ from fastapi import APIRouter, HTTPException
 from typing import Dict, Any, Optional
 from pydantic import BaseModel
 from backend.experiments.runner import ExperimentRunner
+from backend.experiments.error_analyzer import AutomatedErrorAnalyzer, ErrorReport
 from backend.models.evaluation import ExperimentRunRecord
+from backend.storage.repositories import ExperimentRepository
 
 router = APIRouter(prefix="/api/experiments", tags=["Experiments"])
 
 runner = ExperimentRunner()
+error_analyzer = AutomatedErrorAnalyzer()
 
 
 class ExperimentRunRequest(BaseModel):
@@ -26,9 +29,28 @@ async def run_experiment_endpoint(req: ExperimentRunRequest):
             baseline_or_variant=req.baseline,
             model_name=req.model
         )
+        
+        # Persist experiment run in database repository
+        try:
+            await ExperimentRepository.save_run(
+                experiment_id=record.experiment_id,
+                dataset=record.dataset,
+                model=record.model,
+                baseline=record.baseline,
+                metrics=record.metrics.model_dump()
+            )
+        except Exception:
+            pass
+
         return record
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/error-analysis", response_model=ErrorReport)
+async def get_error_analysis():
+    """Generates automated error categorization and taxonomy diagnostic report."""
+    return error_analyzer.get_taxonomy_report()
 
 
 @router.get("/{experiment_id}", response_model=ExperimentRunRecord)

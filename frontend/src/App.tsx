@@ -6,6 +6,8 @@ import { ProofDAGViewer } from './components/ProofDAGViewer';
 import { ExperimentDashboard } from './components/ExperimentDashboard';
 import { DatasetExplorer } from './components/DatasetExplorer';
 import { ArchitectureView } from './components/ArchitectureView';
+import { ErrorAnalysisView } from './components/ErrorAnalysisView';
+import { KnowledgeBaseInspector } from './components/KnowledgeBaseInspector';
 import {
   BrainCircuit,
   Activity,
@@ -14,12 +16,17 @@ import {
   FlaskConical,
   Database,
   Cpu,
-  ShieldCheck
+  ShieldCheck,
+  Bug,
+  FolderArchive
 } from 'lucide-react';
 
 export const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'playground' | 'proof_dag' | 'experiments' | 'datasets' | 'architecture'>('playground');
+  const [activeTab, setActiveTab] = useState<
+    'playground' | 'proof_dag' | 'knowledge_base' | 'experiments' | 'datasets' | 'error_analysis' | 'architecture'
+  >('playground');
   const [activeProof, setActiveProof] = useState<ProofGraph | null>(null);
+  const [playgroundQuery, setPlaygroundQuery] = useState<string | undefined>(undefined);
   const [health, setHealth] = useState<HealthStatus | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -35,6 +42,11 @@ export const App: React.FC = () => {
         setLoading(false);
       });
   }, []);
+
+  const handleLoadQueryIntoPlayground = (query: string) => {
+    setPlaygroundQuery(query);
+    setActiveTab('playground');
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
@@ -78,8 +90,10 @@ export const App: React.FC = () => {
         {[
           { id: 'playground', label: 'Reasoning Playground', icon: PlaySquare },
           { id: 'proof_dag', label: 'Proof Trace & DAG', icon: GitCommit },
+          { id: 'knowledge_base', label: 'Knowledge Base & Sessions', icon: FolderArchive },
           { id: 'experiments', label: 'Experiments & Baselines', icon: FlaskConical },
           { id: 'datasets', label: 'Benchmark Datasets', icon: Database },
+          { id: 'error_analysis', label: 'Error Analysis & Taxonomy', icon: Bug },
           { id: 'architecture', label: 'Architecture & Theory', icon: Cpu },
         ].map((tab) => {
           const Icon = tab.icon;
@@ -112,13 +126,18 @@ export const App: React.FC = () => {
 
         {activeTab === 'playground' && (
           <Playground
+            initialQuery={playgroundQuery}
             onProofGenerated={(proof) => setActiveProof(proof)}
             onNavigateToProofDAG={() => setActiveTab('proof_dag')}
           />
         )}
         {activeTab === 'proof_dag' && <ProofDAGViewer proof={activeProof} />}
+        {activeTab === 'knowledge_base' && (
+          <KnowledgeBaseInspector onLoadQueryIntoPlayground={handleLoadQueryIntoPlayground} />
+        )}
         {activeTab === 'experiments' && <ExperimentDashboard />}
         {activeTab === 'datasets' && <DatasetExplorer />}
+        {activeTab === 'error_analysis' && <ErrorAnalysisView />}
         {activeTab === 'architecture' && <ArchitectureView />}
       </main>
 

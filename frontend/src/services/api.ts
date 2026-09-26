@@ -75,3 +75,27 @@ export async function listExperiments(): Promise<{ experiments: any[] }> {
   }
   return response.json();
 }
+
+export async function fetchErrorAnalysis(): Promise<any> {
+  const response = await fetch(`${API_BASE}/api/experiments/error-analysis`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch error analysis: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function fetchReasoningSessions(): Promise<{ total: number; sessions: any[] }> {
+  const response = await fetch(`${API_BASE}/api/sessions`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch sessions: ${response.status}`);
+  }
+  return response.json();
+}
+
+export async function fetchSessionDetail(sessionId: string): Promise<any> {
+  const response = await fetch(`${API_BASE}/api/sessions/${sessionId}`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch session detail: ${response.status}`);
+  }
+  return response.json();
+}
