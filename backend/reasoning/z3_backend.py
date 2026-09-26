@@ -11,7 +11,7 @@ from backend.reasoning.base import ReasoningBackend
 from backend.reasoning.engine import DeterministicSymbolicEngine
 
 try:
-    import z3
+    import z3  # type: ignore
     HAS_Z3 = True
 except ImportError:
     HAS_Z3 = False
