@@ -1,0 +1,30 @@
+{
+  "experiment_id": "exp_1790437392_baeaef",
+  "timestamp": "2026-09-26T15:43:12.912036+00:00",
+  "dataset": "custom",
+  "dataset_version": "1.0",
+  "model": "mock-model",
+  "model_version": "1.0",
+  "prompt_version": "1.0",
+  "temperature": 0.0,
+  "max_tokens": 512,
+  "system_configuration": {
+    "reasoning_backend": "pure",
+    "provider": "mock"
+  },
+  "baseline": "proposed",
+  "metrics": {
+    "answer_accuracy": 1.0,
+    "formalization_accuracy": 0.8333,
+    "logical_validity": 1.0,
+    "contradiction_precision": 1.0,
+    "contradiction_recall": 1.0,
+    "contradiction_f1": 1.0,
+    "unknown_accuracy": 1.0,
+    "proof_accuracy": 0.6667,
+    "unsupported_conclusion_rate": 0.0,
+    "explanation_faithfulness": 0.8333,
+    "average_latency_ms": 0.17,
+    "average_tokens_used": 180.0
+  }
+}

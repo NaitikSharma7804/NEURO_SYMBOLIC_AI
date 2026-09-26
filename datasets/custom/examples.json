@@ -1,0 +1,144 @@
+[
+  {
+    "id": "custom-01",
+    "category": "ENTAILMENT",
+    "premises": [
+      "All humans are mortal.",
+      "Socrates is a human."
+    ],
+    "query": "Socrates is mortal.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [{"predicate": "human", "arguments": ["socrates"], "is_negated": false}],
+      "rules": [{
+        "variables": ["X"],
+        "body": [{"predicate": "human", "arguments": ["X"], "is_negated": false}],
+        "head": {"predicate": "mortal", "arguments": ["X"], "is_negated": false}
+      }],
+      "query": {"predicate": "mortal", "arguments": ["socrates"], "is_negated": false}
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-02",
+    "category": "CONTRADICTION",
+    "premises": [
+      "Penguins do not fly.",
+      "Tweety is a penguin."
+    ],
+    "query": "Tweety flies.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [{"predicate": "penguin", "arguments": ["tweety"], "is_negated": false}],
+      "rules": [{
+        "variables": ["X"],
+        "body": [{"predicate": "penguin", "arguments": ["X"], "is_negated": false}],
+        "head": {"predicate": "flies", "arguments": ["X"], "is_negated": true}
+      }],
+      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-03",
+    "category": "UNKNOWN",
+    "premises": [
+      "Tweety is a bird."
+    ],
+    "query": "Tweety flies.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [{"predicate": "bird", "arguments": ["tweety"], "is_negated": false}],
+      "rules": [],
+      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-04",
+    "category": "MULTI_HOP",
+    "premises": [
+      "Alice is a student.",
+      "Students are people.",
+      "People are mortal."
+    ],
+    "query": "Alice is mortal.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [{"predicate": "student", "arguments": ["alice"], "is_negated": false}],
+      "rules": [
+        {
+          "variables": ["X"],
+          "body": [{"predicate": "student", "arguments": ["X"], "is_negated": false}],
+          "head": {"predicate": "person", "arguments": ["X"], "is_negated": false}
+        },
+        {
+          "variables": ["X"],
+          "body": [{"predicate": "person", "arguments": ["X"], "is_negated": false}],
+          "head": {"predicate": "mortal", "arguments": ["X"], "is_negated": false}
+        }
+      ],
+      "query": {"predicate": "mortal", "arguments": ["alice"], "is_negated": false}
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-05",
+    "category": "CONFLICTING_KNOWLEDGE",
+    "premises": [
+      "Tweety is a bird.",
+      "Birds fly.",
+      "Tweety does not fly."
+    ],
+    "query": "Tweety flies.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {"predicate": "bird", "arguments": ["tweety"], "is_negated": false},
+        {"predicate": "flies", "arguments": ["tweety"], "is_negated": true}
+      ],
+      "rules": [
+        {
+          "variables": ["X"],
+          "body": [{"predicate": "bird", "arguments": ["X"], "is_negated": false}],
+          "head": {"predicate": "flies", "arguments": ["X"], "is_negated": false}
+        }
+      ],
+      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+    },
+    "difficulty": 2,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-06",
+    "category": "REPRESENTATION_ERROR",
+    "premises": [
+      "Every person has a soul."
+    ],
+    "query": "Is Plato wise?",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [],
+      "rules": [
+        {
+          "variables": ["X"],
+          "body": [{"predicate": "person", "arguments": ["X"], "is_negated": false}],
+          "head": {"predicate": "soul", "arguments": ["Y"], "is_negated": false}
+        }
+      ],
+      "query": {"predicate": "wise", "arguments": ["plato"], "is_negated": false}
+    },
+    "difficulty": 3,
+    "depth": 0,
+    "source": "custom_diagnostic"
+  }
+]
