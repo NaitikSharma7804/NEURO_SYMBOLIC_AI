@@ -1,0 +1,1676 @@
+[
+  {
+    "id": "ruletaker-d0-ent-1",
+    "category": "DEPTH_0",
+    "premises": [
+      "Bob is quiet."
+    ],
+    "query": "Bob is quiet.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "bob"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "quiet",
+        "arguments": [
+          "bob"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d0-unk-2",
+    "category": "DEPTH_0_UNKNOWN",
+    "premises": [
+      "Bob is quiet."
+    ],
+    "query": "Bob is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "bob"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "bob"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d0-ent-3",
+    "category": "DEPTH_0",
+    "premises": [
+      "Dave is cold."
+    ],
+    "query": "Dave is cold.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "cold",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d0-unk-4",
+    "category": "DEPTH_0_UNKNOWN",
+    "premises": [
+      "Dave is cold."
+    ],
+    "query": "Dave is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d0-ent-5",
+    "category": "DEPTH_0",
+    "premises": [
+      "Fiona is green."
+    ],
+    "query": "Fiona is green.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "green",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d0-unk-6",
+    "category": "DEPTH_0_UNKNOWN",
+    "premises": [
+      "Fiona is green."
+    ],
+    "query": "Fiona is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-ent-7",
+    "category": "DEPTH_1",
+    "premises": [
+      "Dave is quiet.",
+      "All quiet things are smart."
+    ],
+    "query": "Dave is smart.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "smart",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-unk-8",
+    "category": "DEPTH_1_UNKNOWN",
+    "premises": [
+      "Dave is quiet.",
+      "All quiet things are smart."
+    ],
+    "query": "Dave is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-ent-9",
+    "category": "DEPTH_1",
+    "premises": [
+      "Fiona is cold.",
+      "All cold things are rough."
+    ],
+    "query": "Fiona is rough.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "rough",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-unk-10",
+    "category": "DEPTH_1_UNKNOWN",
+    "premises": [
+      "Fiona is cold.",
+      "All cold things are rough."
+    ],
+    "query": "Fiona is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-ent-11",
+    "category": "DEPTH_1",
+    "premises": [
+      "Gary is green.",
+      "All green things are small."
+    ],
+    "query": "Gary is small.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "small",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d1-unk-12",
+    "category": "DEPTH_1_UNKNOWN",
+    "premises": [
+      "Gary is green.",
+      "All green things are small."
+    ],
+    "query": "Gary is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-ent-13",
+    "category": "DEPTH_2",
+    "premises": [
+      "Fiona is quiet.",
+      "All quiet things are smart.",
+      "All smart things are kind."
+    ],
+    "query": "Fiona is kind.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "kind",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "kind",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-unk-14",
+    "category": "DEPTH_2_UNKNOWN",
+    "premises": [
+      "Fiona is quiet.",
+      "All quiet things are smart.",
+      "All smart things are kind."
+    ],
+    "query": "Fiona is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "kind",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-ent-15",
+    "category": "DEPTH_2",
+    "premises": [
+      "Gary is cold.",
+      "All cold things are rough.",
+      "All rough things are round."
+    ],
+    "query": "Gary is round.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "round",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "round",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-unk-16",
+    "category": "DEPTH_2_UNKNOWN",
+    "premises": [
+      "Gary is cold.",
+      "All cold things are rough.",
+      "All rough things are round."
+    ],
+    "query": "Gary is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "round",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-ent-17",
+    "category": "DEPTH_2",
+    "premises": [
+      "Harry is green.",
+      "All green things are small.",
+      "All small things are furry."
+    ],
+    "query": "Harry is furry.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "furry",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d2-unk-18",
+    "category": "DEPTH_2_UNKNOWN",
+    "premises": [
+      "Harry is green.",
+      "All green things are small.",
+      "All small things are furry."
+    ],
+    "query": "Harry is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-ent-19",
+    "category": "DEPTH_3",
+    "premises": [
+      "Gary is quiet.",
+      "All quiet things are smart.",
+      "All smart things are kind.",
+      "All kind things are helpful."
+    ],
+    "query": "Gary is helpful.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "kind",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "helpful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "helpful",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-unk-20",
+    "category": "DEPTH_3_UNKNOWN",
+    "premises": [
+      "Gary is quiet.",
+      "All quiet things are smart.",
+      "All smart things are kind.",
+      "All kind things are helpful."
+    ],
+    "query": "Gary is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "kind",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "helpful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-ent-21",
+    "category": "DEPTH_3",
+    "premises": [
+      "Harry is cold.",
+      "All cold things are rough.",
+      "All rough things are round.",
+      "All round things are heavy."
+    ],
+    "query": "Harry is heavy.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "round",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "heavy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "heavy",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-unk-22",
+    "category": "DEPTH_3_UNKNOWN",
+    "premises": [
+      "Harry is cold.",
+      "All cold things are rough.",
+      "All rough things are round.",
+      "All round things are heavy."
+    ],
+    "query": "Harry is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "round",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "heavy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-ent-23",
+    "category": "DEPTH_3",
+    "premises": [
+      "Charlie is green.",
+      "All green things are small.",
+      "All small things are furry.",
+      "All furry things are fast."
+    ],
+    "query": "Charlie is fast.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "charlie"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "fast",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "fast",
+        "arguments": [
+          "charlie"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d3-unk-24",
+    "category": "DEPTH_3_UNKNOWN",
+    "premises": [
+      "Charlie is green.",
+      "All green things are small.",
+      "All small things are furry.",
+      "All furry things are fast."
+    ],
+    "query": "Charlie is flying.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "charlie"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "fast",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flying",
+        "arguments": [
+          "charlie"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "ruletaker"
+  },
+  {
+    "id": "ruletaker-d4-ent-25",
+    "category": "DEPTH_4",
+    "premises": [
+      "Harry is quiet.",
+      "All quiet things are smart.",
+      "All smart things are kind.",
+      "All kind things are helpful.",
+      "All helpful things are polite."
+    ],
+    "query": "Harry is polite.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quiet",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "kind",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "helpful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "helpful",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "polite",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "polite",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "ruletaker"
+  }
+]

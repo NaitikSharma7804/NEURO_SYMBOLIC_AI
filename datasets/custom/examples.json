@@ -1,6 +1,6 @@
 [
   {
-    "id": "custom-01",
+    "id": "custom-ent-01",
     "category": "ENTAILMENT",
     "premises": [
       "All humans are mortal.",
@@ -9,20 +9,334 @@
     "query": "Socrates is mortal.",
     "gold_label": "ENTAILED",
     "gold_logic": {
-      "facts": [{"predicate": "human", "arguments": ["socrates"], "is_negated": false}],
-      "rules": [{
-        "variables": ["X"],
-        "body": [{"predicate": "human", "arguments": ["X"], "is_negated": false}],
-        "head": {"predicate": "mortal", "arguments": ["X"], "is_negated": false}
-      }],
-      "query": {"predicate": "mortal", "arguments": ["socrates"], "is_negated": false}
+      "facts": [
+        {
+          "predicate": "human",
+          "arguments": [
+            "socrates"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "human",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mortal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "mortal",
+        "arguments": [
+          "socrates"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 1,
     "depth": 1,
     "source": "custom_diagnostic"
   },
   {
-    "id": "custom-02",
+    "id": "custom-ent-02",
+    "category": "ENTAILMENT",
+    "premises": [
+      "All mammals are warm-blooded.",
+      "Whales are mammals.",
+      "Moby is a whale."
+    ],
+    "query": "Moby is warm-blooded.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "whale",
+          "arguments": [
+            "moby"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "whale",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mammal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "mammal",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "warm_blooded",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "warm_blooded",
+        "arguments": [
+          "moby"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-ent-03",
+    "category": "ENTAILMENT",
+    "premises": [
+      "Every carnivore eats meat.",
+      "Lions are carnivores.",
+      "Simba is a lion."
+    ],
+    "query": "Simba eats meat.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "lion",
+          "arguments": [
+            "simba"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "lion",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "carnivore",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "carnivore",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "eats_meat",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "eats_meat",
+        "arguments": [
+          "simba"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-ent-04",
+    "category": "ENTAILMENT",
+    "premises": [
+      "All prime numbers greater than two are odd.",
+      "Three is a prime greater than two."
+    ],
+    "query": "Three is odd.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "prime_gt_two",
+          "arguments": [
+            "three"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "prime_gt_two",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "odd",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "odd",
+        "arguments": [
+          "three"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-ent-05",
+    "category": "ENTAILMENT",
+    "premises": [
+      "A canine is a mammal.",
+      "A wolf is a canine.",
+      "Akela is a wolf."
+    ],
+    "query": "Akela is a mammal.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "wolf",
+          "arguments": [
+            "akela"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "wolf",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "canine",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "canine",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mammal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "mammal",
+        "arguments": [
+          "akela"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-cont-01",
     "category": "CONTRADICTION",
     "premises": [
       "Penguins do not fly.",
@@ -31,20 +345,258 @@
     "query": "Tweety flies.",
     "gold_label": "CONTRADICTED",
     "gold_logic": {
-      "facts": [{"predicate": "penguin", "arguments": ["tweety"], "is_negated": false}],
-      "rules": [{
-        "variables": ["X"],
-        "body": [{"predicate": "penguin", "arguments": ["X"], "is_negated": false}],
-        "head": {"predicate": "flies", "arguments": ["X"], "is_negated": true}
-      }],
-      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+      "facts": [
+        {
+          "predicate": "penguin",
+          "arguments": [
+            "tweety"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "penguin",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "flies",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "flies",
+        "arguments": [
+          "tweety"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 1,
     "depth": 1,
     "source": "custom_diagnostic"
   },
   {
-    "id": "custom-03",
+    "id": "custom-cont-02",
+    "category": "CONTRADICTION",
+    "premises": [
+      "Reptiles are not warm-blooded.",
+      "Lizards are reptiles.",
+      "Rango is a lizard."
+    ],
+    "query": "Rango is warm-blooded.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "lizard",
+          "arguments": [
+            "rango"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "lizard",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "reptile",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "reptile",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "warm_blooded",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "warm_blooded",
+        "arguments": [
+          "rango"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-cont-03",
+    "category": "CONTRADICTION",
+    "premises": [
+      "No vegetarian eats meat.",
+      "Alice is a vegetarian."
+    ],
+    "query": "Alice eats meat.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "vegetarian",
+          "arguments": [
+            "alice"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "vegetarian",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "eats_meat",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "eats_meat",
+        "arguments": [
+          "alice"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-cont-04",
+    "category": "CONTRADICTION",
+    "premises": [
+      "Inanimate objects do not breathe.",
+      "Rocks are inanimate objects.",
+      "Pebble is a rock."
+    ],
+    "query": "Pebble breathes.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "rock",
+          "arguments": [
+            "pebble"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rock",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "inanimate",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "inanimate",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "breathes",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "breathes",
+        "arguments": [
+          "pebble"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-unk-01",
     "category": "UNKNOWN",
     "premises": [
       "Tweety is a bird."
@@ -52,16 +604,177 @@
     "query": "Tweety flies.",
     "gold_label": "UNKNOWN",
     "gold_logic": {
-      "facts": [{"predicate": "bird", "arguments": ["tweety"], "is_negated": false}],
+      "facts": [
+        {
+          "predicate": "bird",
+          "arguments": [
+            "tweety"
+          ],
+          "is_negated": false
+        }
+      ],
       "rules": [],
-      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+      "query": {
+        "predicate": "flies",
+        "arguments": [
+          "tweety"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 1,
     "depth": 0,
     "source": "custom_diagnostic"
   },
   {
-    "id": "custom-04",
+    "id": "custom-unk-02",
+    "category": "UNKNOWN",
+    "premises": [
+      "John likes jazz.",
+      "Jazz is a genre of music."
+    ],
+    "query": "John plays the trumpet.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "likes_jazz",
+          "arguments": [
+            "john"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "music_genre",
+          "arguments": [
+            "jazz"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [],
+      "query": {
+        "predicate": "plays_trumpet",
+        "arguments": [
+          "john"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-unk-03",
+    "category": "UNKNOWN",
+    "premises": [
+      "All doctors study medicine.",
+      "Sarah is a doctor."
+    ],
+    "query": "Sarah is a surgeon.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "doctor",
+          "arguments": [
+            "sarah"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "doctor",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "studies_medicine",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "surgeon",
+        "arguments": [
+          "sarah"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 0,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-unk-04",
+    "category": "UNKNOWN",
+    "premises": [
+      "Bob bought a vehicle.",
+      "All cars are vehicles."
+    ],
+    "query": "Bob bought a car.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "bought_vehicle",
+          "arguments": [
+            "bob"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "car",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "vehicle",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "bought_car",
+        "arguments": [
+          "bob"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 0,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-multihop-01",
     "category": "MULTI_HOP",
     "premises": [
       "Alice is a student.",
@@ -71,27 +784,291 @@
     "query": "Alice is mortal.",
     "gold_label": "ENTAILED",
     "gold_logic": {
-      "facts": [{"predicate": "student", "arguments": ["alice"], "is_negated": false}],
-      "rules": [
+      "facts": [
         {
-          "variables": ["X"],
-          "body": [{"predicate": "student", "arguments": ["X"], "is_negated": false}],
-          "head": {"predicate": "person", "arguments": ["X"], "is_negated": false}
-        },
-        {
-          "variables": ["X"],
-          "body": [{"predicate": "person", "arguments": ["X"], "is_negated": false}],
-          "head": {"predicate": "mortal", "arguments": ["X"], "is_negated": false}
+          "predicate": "student",
+          "arguments": [
+            "alice"
+          ],
+          "is_negated": false
         }
       ],
-      "query": {"predicate": "mortal", "arguments": ["alice"], "is_negated": false}
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "student",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "person",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "person",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mortal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "mortal",
+        "arguments": [
+          "alice"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 2,
     "depth": 2,
     "source": "custom_diagnostic"
   },
   {
-    "id": "custom-05",
+    "id": "custom-multihop-02",
+    "category": "MULTI_HOP",
+    "premises": [
+      "Puppies are young dogs.",
+      "Dogs are canines.",
+      "Canines are mammals.",
+      "Mammals are organisms.",
+      "Spot is a puppy."
+    ],
+    "query": "Spot is an organism.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "puppy",
+          "arguments": [
+            "spot"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "puppy",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "dog",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "dog",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "canine",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "canine",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mammal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "mammal",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "organism",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "organism",
+        "arguments": [
+          "spot"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-multihop-03",
+    "category": "MULTI_HOP",
+    "premises": [
+      "Iron is a metal.",
+      "Metals conduct electricity.",
+      "Conductors allow current flow.",
+      "Rod is made of iron."
+    ],
+    "query": "Rod allows current flow.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "iron",
+          "arguments": [
+            "rod"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "iron",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "metal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "metal",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "conductor",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "conductor",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "allows_current",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "allows_current",
+        "arguments": [
+          "rod"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-conflict-01",
     "category": "CONFLICTING_KNOWLEDGE",
     "premises": [
       "Tweety is a bird.",
@@ -102,24 +1079,296 @@
     "gold_label": "CONTRADICTED",
     "gold_logic": {
       "facts": [
-        {"predicate": "bird", "arguments": ["tweety"], "is_negated": false},
-        {"predicate": "flies", "arguments": ["tweety"], "is_negated": true}
+        {
+          "predicate": "bird",
+          "arguments": [
+            "tweety"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "flies",
+          "arguments": [
+            "tweety"
+          ],
+          "is_negated": true
+        }
       ],
       "rules": [
         {
-          "variables": ["X"],
-          "body": [{"predicate": "bird", "arguments": ["X"], "is_negated": false}],
-          "head": {"predicate": "flies", "arguments": ["X"], "is_negated": false}
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "bird",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "flies",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
         }
       ],
-      "query": {"predicate": "flies", "arguments": ["tweety"], "is_negated": false}
+      "query": {
+        "predicate": "flies",
+        "arguments": [
+          "tweety"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 2,
     "depth": 1,
     "source": "custom_diagnostic"
   },
   {
-    "id": "custom-06",
+    "id": "custom-conflict-02",
+    "category": "CONFLICTING_KNOWLEDGE",
+    "premises": [
+      "Nixon is a Quaker.",
+      "Nixon is a Republican.",
+      "Quakers are pacifists.",
+      "Republicans are not pacifists."
+    ],
+    "query": "Nixon is a pacifist.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "quaker",
+          "arguments": [
+            "nixon"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "republican",
+          "arguments": [
+            "nixon"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quaker",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "pacifist",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "republican",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "pacifist",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "pacifist",
+        "arguments": [
+          "nixon"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-distractor-01",
+    "category": "DISTRACTOR",
+    "premises": [
+      "The sky is blue.",
+      "Roses are red.",
+      "Sugar is sweet.",
+      "All humans are mortal.",
+      "Socrates is a human."
+    ],
+    "query": "Socrates is mortal.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "blue",
+          "arguments": [
+            "sky"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "red",
+          "arguments": [
+            "roses"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "sweet",
+          "arguments": [
+            "sugar"
+          ],
+          "is_negated": false
+        },
+        {
+          "predicate": "human",
+          "arguments": [
+            "socrates"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "human",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mortal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "mortal",
+        "arguments": [
+          "socrates"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 1,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-adv-01",
+    "category": "ADVERSARIAL",
+    "premises": [
+      "All circular arguments are unsound.",
+      "All unsound arguments should be rejected.",
+      "This paper's theorem is a circular argument."
+    ],
+    "query": "This paper's theorem should be rejected.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "circular_arg",
+          "arguments": [
+            "theorem"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "circular_arg",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "unsound",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "unsound",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rejected",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "rejected",
+        "arguments": [
+          "theorem"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 2,
+    "source": "custom_diagnostic"
+  },
+  {
+    "id": "custom-rep-01",
     "category": "REPRESENTATION_ERROR",
     "premises": [
       "Every person has a soul."
@@ -130,12 +1379,34 @@
       "facts": [],
       "rules": [
         {
-          "variables": ["X"],
-          "body": [{"predicate": "person", "arguments": ["X"], "is_negated": false}],
-          "head": {"predicate": "soul", "arguments": ["Y"], "is_negated": false}
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "person",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "soul",
+            "arguments": [
+              "Y"
+            ],
+            "is_negated": false
+          }
         }
       ],
-      "query": {"predicate": "wise", "arguments": ["plato"], "is_negated": false}
+      "query": {
+        "predicate": "wise",
+        "arguments": [
+          "plato"
+        ],
+        "is_negated": false
+      }
     },
     "difficulty": 3,
     "depth": 0,

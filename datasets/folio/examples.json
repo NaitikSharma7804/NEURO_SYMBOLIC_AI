@@ -1,0 +1,1171 @@
+[
+  {
+    "id": "folio-01",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All Greek philosophers are mortal.",
+      "Aristotle is a Greek philosopher."
+    ],
+    "query": "Aristotle is mortal.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "philosopher",
+          "arguments": [
+            "aristotle"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "philosopher",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mortal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "mortal",
+        "arguments": [
+          "aristotle"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-02",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All mammals are vertebrates.",
+      "All vertebrates have a spine.",
+      "Dogs are mammals.",
+      "Pluto is a dog."
+    ],
+    "query": "Pluto has a spine.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "dog",
+          "arguments": [
+            "pluto"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "dog",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "mammal",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "mammal",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "vertebrate",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "vertebrate",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "has_spine",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "has_spine",
+        "arguments": [
+          "pluto"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "folio"
+  },
+  {
+    "id": "folio-03",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "No reptile has fur.",
+      "All snakes are reptiles.",
+      "Kaa is a snake."
+    ],
+    "query": "Kaa has fur.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "snake",
+          "arguments": [
+            "kaa"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "snake",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "reptile",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "reptile",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "has_fur",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "has_fur",
+        "arguments": [
+          "kaa"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "folio"
+  },
+  {
+    "id": "folio-04",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All students love learning.",
+      "Alice is a student."
+    ],
+    "query": "Alice loves learning.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "student",
+          "arguments": [
+            "alice"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "student",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "loves_learning",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "loves_learning",
+        "arguments": [
+          "alice"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-05",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All prime numbers are natural numbers.",
+      "Seven is a prime number."
+    ],
+    "query": "Seven is a composite number.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "prime",
+          "arguments": [
+            "seven"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "prime",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "natural_number",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "composite",
+        "arguments": [
+          "seven"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-06",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "No herbivores eat meat.",
+      "Cows are herbivores.",
+      "Bessie is a cow."
+    ],
+    "query": "Bessie eats meat.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cow",
+          "arguments": [
+            "bessie"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cow",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "herbivore",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "herbivore",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "eats_meat",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "eats_meat",
+        "arguments": [
+          "bessie"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 2,
+    "depth": 2,
+    "source": "folio"
+  },
+  {
+    "id": "folio-07",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "Every triangle has three vertices.",
+      "Shape A is a triangle."
+    ],
+    "query": "Shape A has three vertices.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "triangle",
+          "arguments": [
+            "shape_a"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "triangle",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "has_three_vertices",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "has_three_vertices",
+        "arguments": [
+          "shape_a"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-08",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All mathematicians love logic.",
+      "Alan is a mathematician.",
+      "Turing is Alan."
+    ],
+    "query": "Alan loves physics.",
+    "gold_label": "UNKNOWN",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "mathematician",
+          "arguments": [
+            "alan"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "mathematician",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "loves_logic",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "loves_physics",
+        "arguments": [
+          "alan"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-09",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "All planets orbit a star.",
+      "Mars is a planet."
+    ],
+    "query": "Mars orbits a star.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "planet",
+          "arguments": [
+            "mars"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "planet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "orbits_star",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "orbits_star",
+        "arguments": [
+          "mars"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-10",
+    "category": "FIRST_ORDER_LOGIC",
+    "premises": [
+      "Nothing that is cold is boiling.",
+      "Liquid nitrogen is cold."
+    ],
+    "query": "Liquid nitrogen is boiling.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "liquid_nitrogen"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "boiling",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "boiling",
+        "arguments": [
+          "liquid_nitrogen"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-11",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_11 are property_11.",
+      "Entity_11 is category_11."
+    ],
+    "query": "Entity_11 is property_11.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_11",
+          "arguments": [
+            "entity_11"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_11",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_11",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_11",
+        "arguments": [
+          "entity_11"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-12",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_12 are property_12.",
+      "Entity_12 is category_12."
+    ],
+    "query": "Entity_12 is property_12.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_12",
+          "arguments": [
+            "entity_12"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_12",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_12",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_12",
+        "arguments": [
+          "entity_12"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-13",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_13 are property_13.",
+      "Entity_13 is category_13."
+    ],
+    "query": "Entity_13 is property_13.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_13",
+          "arguments": [
+            "entity_13"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_13",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_13",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_13",
+        "arguments": [
+          "entity_13"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-14",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_14 are property_14.",
+      "Entity_14 is category_14."
+    ],
+    "query": "Entity_14 is property_14.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_14",
+          "arguments": [
+            "entity_14"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_14",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_14",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_14",
+        "arguments": [
+          "entity_14"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-15",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_15 are property_15.",
+      "Entity_15 is category_15."
+    ],
+    "query": "Entity_15 is property_15.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_15",
+          "arguments": [
+            "entity_15"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_15",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_15",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_15",
+        "arguments": [
+          "entity_15"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-16",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_16 are property_16.",
+      "Entity_16 is category_16."
+    ],
+    "query": "Entity_16 is property_16.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_16",
+          "arguments": [
+            "entity_16"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_16",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_16",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_16",
+        "arguments": [
+          "entity_16"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-17",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_17 are property_17.",
+      "Entity_17 is category_17."
+    ],
+    "query": "Entity_17 is property_17.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_17",
+          "arguments": [
+            "entity_17"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_17",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_17",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_17",
+        "arguments": [
+          "entity_17"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-18",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_18 are property_18.",
+      "Entity_18 is category_18."
+    ],
+    "query": "Entity_18 is property_18.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_18",
+          "arguments": [
+            "entity_18"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_18",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_18",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_18",
+        "arguments": [
+          "entity_18"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-19",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_19 are property_19.",
+      "Entity_19 is category_19."
+    ],
+    "query": "Entity_19 is property_19.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_19",
+          "arguments": [
+            "entity_19"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_19",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_19",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_19",
+        "arguments": [
+          "entity_19"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  },
+  {
+    "id": "folio-20",
+    "category": "FIRST_ORDER_QUANTIFIED",
+    "premises": [
+      "All category_20 are property_20.",
+      "Entity_20 is category_20."
+    ],
+    "query": "Entity_20 is property_20.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "category_20",
+          "arguments": [
+            "entity_20"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "category_20",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "property_20",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "property_20",
+        "arguments": [
+          "entity_20"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 1,
+    "depth": 1,
+    "source": "folio"
+  }
+]

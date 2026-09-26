@@ -136,7 +136,9 @@ export const App: React.FC = () => {
           <KnowledgeBaseInspector onLoadQueryIntoPlayground={handleLoadQueryIntoPlayground} />
         )}
         {activeTab === 'experiments' && <ExperimentDashboard />}
-        {activeTab === 'datasets' && <DatasetExplorer />}
+        {activeTab === 'datasets' && (
+          <DatasetExplorer onLoadQueryIntoPlayground={handleLoadQueryIntoPlayground} />
+        )}
         {activeTab === 'error_analysis' && <ErrorAnalysisView />}
         {activeTab === 'architecture' && <ArchitectureView />}
       </main>

@@ -58,6 +58,7 @@ class MetricsCalculator:
         avg_latency = sum(latencies_ms) / n if latencies_ms else 0.0
 
         return EvaluationMetrics(
+            total_samples=n,
             answer_accuracy=round(answer_acc, 4),
             formalization_accuracy=round(form_acc, 4),
             logical_validity=round(1.0 - unsupported_rate, 4),

@@ -1,0 +1,1746 @@
+[
+  {
+    "id": "proofwriter-01",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Dave is round.",
+      "If someone is round then they are red.",
+      "If someone is red then they are rough.",
+      "If someone is rough then they are big."
+    ],
+    "query": "Dave is big.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "round",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "red",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "red",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "big",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "big",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-01",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Dave is round.",
+      "If someone is round then they are red.",
+      "If someone is red then they are rough.",
+      "If someone is rough then they are big.",
+      "If someone is big then they are not sleepy."
+    ],
+    "query": "Dave is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "round",
+          "arguments": [
+            "dave"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "red",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "red",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "big",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "big",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "dave"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-02",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Fiona is kind.",
+      "If someone is kind then they are smart.",
+      "If someone is smart then they are quiet.",
+      "If someone is quiet then they are friendly."
+    ],
+    "query": "Fiona is friendly.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "kind",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "quiet",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "friendly",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "friendly",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-02",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Fiona is kind.",
+      "If someone is kind then they are smart.",
+      "If someone is smart then they are quiet.",
+      "If someone is quiet then they are friendly.",
+      "If someone is friendly then they are not sleepy."
+    ],
+    "query": "Fiona is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "kind",
+          "arguments": [
+            "fiona"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "quiet",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "friendly",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "friendly",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "fiona"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-03",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Harry is cold.",
+      "If someone is cold then they are blue.",
+      "If someone is blue then they are furry.",
+      "If someone is furry then they are soft."
+    ],
+    "query": "Harry is soft.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "blue",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "blue",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "soft",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "soft",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-03",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Harry is cold.",
+      "If someone is cold then they are blue.",
+      "If someone is blue then they are furry.",
+      "If someone is furry then they are soft.",
+      "If someone is soft then they are not sleepy."
+    ],
+    "query": "Harry is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "harry"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "blue",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "blue",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "soft",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "soft",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "harry"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-04",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Gary is green.",
+      "If someone is green then they are small.",
+      "If someone is small then they are young.",
+      "If someone is young then they are playful."
+    ],
+    "query": "Gary is playful.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "young",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "young",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "playful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "playful",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-04",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Gary is green.",
+      "If someone is green then they are small.",
+      "If someone is small then they are young.",
+      "If someone is young then they are playful.",
+      "If someone is playful then they are not sleepy."
+    ],
+    "query": "Gary is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "gary"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "young",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "young",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "playful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "playful",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "gary"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-05",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Anne is round.",
+      "If someone is round then they are red.",
+      "If someone is red then they are rough.",
+      "If someone is rough then they are big."
+    ],
+    "query": "Anne is big.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "round",
+          "arguments": [
+            "anne"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "red",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "red",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "big",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "big",
+        "arguments": [
+          "anne"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-05",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Anne is round.",
+      "If someone is round then they are red.",
+      "If someone is red then they are rough.",
+      "If someone is rough then they are big.",
+      "If someone is big then they are not sleepy."
+    ],
+    "query": "Anne is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "round",
+          "arguments": [
+            "anne"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "round",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "red",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "red",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "rough",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "rough",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "big",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "big",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "anne"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-06",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Bob is kind.",
+      "If someone is kind then they are smart.",
+      "If someone is smart then they are quiet.",
+      "If someone is quiet then they are friendly."
+    ],
+    "query": "Bob is friendly.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "kind",
+          "arguments": [
+            "bob"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "quiet",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "friendly",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "friendly",
+        "arguments": [
+          "bob"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-06",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Bob is kind.",
+      "If someone is kind then they are smart.",
+      "If someone is smart then they are quiet.",
+      "If someone is quiet then they are friendly.",
+      "If someone is friendly then they are not sleepy."
+    ],
+    "query": "Bob is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "kind",
+          "arguments": [
+            "bob"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "kind",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "smart",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "smart",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "quiet",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "quiet",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "friendly",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "friendly",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "bob"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-07",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Charlie is cold.",
+      "If someone is cold then they are blue.",
+      "If someone is blue then they are furry.",
+      "If someone is furry then they are soft."
+    ],
+    "query": "Charlie is soft.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "charlie"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "blue",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "blue",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "soft",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "soft",
+        "arguments": [
+          "charlie"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-07",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Charlie is cold.",
+      "If someone is cold then they are blue.",
+      "If someone is blue then they are furry.",
+      "If someone is furry then they are soft.",
+      "If someone is soft then they are not sleepy."
+    ],
+    "query": "Charlie is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "cold",
+          "arguments": [
+            "charlie"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "cold",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "blue",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "blue",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "furry",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "furry",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "soft",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "soft",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "charlie"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-08",
+    "category": "PROOF_CHAIN",
+    "premises": [
+      "Erin is green.",
+      "If someone is green then they are small.",
+      "If someone is small then they are young.",
+      "If someone is young then they are playful."
+    ],
+    "query": "Erin is playful.",
+    "gold_label": "ENTAILED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "erin"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "young",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "young",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "playful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        }
+      ],
+      "query": {
+        "predicate": "playful",
+        "arguments": [
+          "erin"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 3,
+    "depth": 3,
+    "source": "proofwriter"
+  },
+  {
+    "id": "proofwriter-neg-08",
+    "category": "PROOF_CONTRADICTION",
+    "premises": [
+      "Erin is green.",
+      "If someone is green then they are small.",
+      "If someone is small then they are young.",
+      "If someone is young then they are playful.",
+      "If someone is playful then they are not sleepy."
+    ],
+    "query": "Erin is sleepy.",
+    "gold_label": "CONTRADICTED",
+    "gold_logic": {
+      "facts": [
+        {
+          "predicate": "green",
+          "arguments": [
+            "erin"
+          ],
+          "is_negated": false
+        }
+      ],
+      "rules": [
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "green",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "small",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "small",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "young",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "young",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "playful",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": false
+          }
+        },
+        {
+          "variables": [
+            "X"
+          ],
+          "body": [
+            {
+              "predicate": "playful",
+              "arguments": [
+                "X"
+              ],
+              "is_negated": false
+            }
+          ],
+          "head": {
+            "predicate": "sleepy",
+            "arguments": [
+              "X"
+            ],
+            "is_negated": true
+          }
+        }
+      ],
+      "query": {
+        "predicate": "sleepy",
+        "arguments": [
+          "erin"
+        ],
+        "is_negated": false
+      }
+    },
+    "difficulty": 4,
+    "depth": 4,
+    "source": "proofwriter"
+  }
+]

@@ -4,6 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class EvaluationMetrics(BaseModel):
+    total_samples: int = 0
     answer_accuracy: float = 0.0
     formalization_accuracy: float = 0.0
     logical_validity: float = 0.0

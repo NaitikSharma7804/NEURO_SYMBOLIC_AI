@@ -1,6 +1,6 @@
 {
-  "experiment_id": "exp_1790450164_208e0b",
-  "timestamp": "2026-09-26T19:16:04.202580+00:00",
+  "experiment_id": "exp_1790450164_ab3334",
+  "timestamp": "2026-09-26T19:16:04.199140+00:00",
   "dataset": "custom",
   "dataset_version": "1.0",
   "model": "mock-model",
@@ -12,20 +12,20 @@
     "reasoning_backend": "pure",
     "provider": "mock"
   },
-  "baseline": "proposed",
+  "baseline": "baseline_d",
   "metrics": {
     "total_samples": 21,
-    "answer_accuracy": 1.0,
-    "formalization_accuracy": 0.9524,
+    "answer_accuracy": 0.4762,
+    "formalization_accuracy": 1.0,
     "logical_validity": 1.0,
     "contradiction_precision": 1.0,
-    "contradiction_recall": 1.0,
-    "contradiction_f1": 1.0,
+    "contradiction_recall": 0.3333,
+    "contradiction_f1": 0.5,
     "unknown_accuracy": 1.0,
-    "proof_accuracy": 0.7619,
+    "proof_accuracy": 0.4762,
     "unsupported_conclusion_rate": 0.0,
-    "explanation_faithfulness": 0.9524,
-    "average_latency_ms": 0.15,
+    "explanation_faithfulness": 0.0,
+    "average_latency_ms": 0.1,
     "average_tokens_used": 180.0
   }
 }
