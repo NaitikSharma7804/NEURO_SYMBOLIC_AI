@@ -37,5 +37,11 @@ testpaths = ["tests"]
 pythonpath = ["."]
 asyncio_mode = "auto"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*"]
+exclude = ["tests*", "frontend*", "experiments*", "datasets*", "research*", "prolog*", "docs*"]
+
 [tool.vercel]
 entrypoint = "backend.main:app"
+
