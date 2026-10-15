@@ -5,7 +5,7 @@ import {
   ExperimentRunRecord
 } from '../types';
 
-const API_BASE = '';
+const API_BASE = (import.meta as any).env?.VITE_API_URL || '';
 
 export async function fetchHealth(): Promise<HealthStatus> {
   const response = await fetch(`${API_BASE}/health`);

@@ -36,3 +36,6 @@ addopts = "-ra -q --import-mode=importlib"
 testpaths = ["tests"]
 pythonpath = ["."]
 asyncio_mode = "auto"
+
+[tool.vercel]
+entrypoint = "backend.main:app"
